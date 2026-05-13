@@ -1,44 +1,60 @@
 /* ── Theme Variables ── */
 :root {
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --sidebar-width: 13rem;
+  --sidebar-width: 14rem;
 }
 
 html.dark {
-  --bg: #0a0a0c;
+  --bg: #09090b;
   --bg-elevated: #111114;
   --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-panel: linear-gradient(180deg, rgba(24, 24, 27, 0.86) 0%, rgba(9, 9, 11, 0.76) 100%);
+  --panel-border: rgba(255, 255, 255, 0.07);
+  --panel-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+  --panel-inset: inset 0 1px 0 rgba(255, 255, 255, 0.04);
   --border: rgba(255, 255, 255, 0.06);
   --border-hover: rgba(255, 255, 255, 0.12);
-  --text: #e4e4e7;
+  --text: #fafafa;
   --text-secondary: #a1a1aa;
   --text-muted: #71717a;
   --accent: #60a5fa;
   --accent-hover: #93c5fd;
+  --accent-bg: rgba(96, 165, 250, 0.12);
   --tag-bg: rgba(96, 165, 250, 0.1);
   --tag-text: #93c5fd;
   --badge-bg: rgba(96, 165, 250, 0.1);
   --badge-text: #93c5fd;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --nav-icon-bg: rgba(96, 165, 250, 0.12);
+  --nav-active-border: rgba(96, 165, 250, 0.5);
+  --nav-active-bg: rgba(96, 165, 250, 0.08);
 }
 
 html.light {
   --bg: #fafafa;
-  --bg-elevated: #ffffff;
+  --bg-elevated: #f4f4f5;
   --bg-card: rgba(0, 0, 0, 0.02);
+  --bg-panel: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(250, 250, 250, 0.8) 100%);
+  --panel-border: rgba(0, 0, 0, 0.08);
+  --panel-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  --panel-inset: inset 0 1px 0 rgba(255, 255, 255, 0.6);
   --border: rgba(0, 0, 0, 0.08);
   --border-hover: rgba(0, 0, 0, 0.15);
-  --text: #18181b;
+  --text: #09090b;
   --text-secondary: #52525b;
   --text-muted: #a1a1aa;
   --accent: #2563eb;
   --accent-hover: #1d4ed8;
+  --accent-bg: rgba(37, 99, 235, 0.08);
   --tag-bg: rgba(37, 99, 235, 0.08);
   --tag-text: #2563eb;
   --badge-bg: rgba(37, 99, 235, 0.08);
   --badge-text: #2563eb;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --nav-icon-bg: rgba(37, 99, 235, 0.08);
+  --nav-active-border: rgba(37, 99, 235, 0.4);
+  --nav-active-bg: rgba(37, 99, 235, 0.06);
 }
 
 /* ── Reset ── */
@@ -49,9 +65,13 @@ html.light {
 }
 
 html {
-  font-size: 14px;
+  font-size: 13px;
   scroll-behavior: smooth;
   scroll-padding-top: 4rem;
+}
+
+@media (min-width: 768px) {
+  html { font-size: 14px; }
 }
 
 body {
@@ -69,9 +89,9 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 50% at 10% 10%, rgba(96, 165, 250, 0.04), transparent),
-    radial-gradient(ellipse 50% 40% at 90% 20%, rgba(244, 114, 182, 0.03), transparent),
-    radial-gradient(ellipse 40% 30% at 50% 90%, rgba(52, 211, 153, 0.03), transparent);
+    radial-gradient(ellipse 60% 50% at 10% 10%, rgba(96, 165, 250, 0.12), transparent),
+    radial-gradient(ellipse 50% 40% at 85% 18%, rgba(244, 114, 182, 0.10), transparent),
+    radial-gradient(ellipse 40% 30% at 50% 90%, rgba(52, 211, 153, 0.09), transparent);
   pointer-events: none;
   z-index: 0;
 }
@@ -81,13 +101,20 @@ body::after {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
   background-size: 32px 32px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent);
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black, transparent);
   pointer-events: none;
   z-index: 0;
+}
+
+html.light body::before {
+  background:
+    radial-gradient(ellipse 60% 50% at 10% 10%, rgba(96, 165, 250, 0.06), transparent),
+    radial-gradient(ellipse 50% 40% at 85% 18%, rgba(244, 114, 182, 0.04), transparent),
+    radial-gradient(ellipse 40% 30% at 50% 90%, rgba(52, 211, 153, 0.04), transparent);
 }
 
 html.light body::after {
@@ -141,36 +168,61 @@ a:hover {
 }
 
 .sidebar-name {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: var(--text);
-  letter-spacing: -0.01em;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--text-muted);
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.3rem;
 }
 
 .nav-link {
-  display: block;
-  padding: 0.4rem 0.65rem;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  border: 1px solid transparent;
   transition: all 0.15s;
+}
+
+.nav-link .nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 7px;
+  background: var(--nav-icon-bg);
+  flex-shrink: 0;
+}
+
+.nav-link .nav-icon svg {
+  width: 14px;
+  height: 14px;
+  color: var(--accent);
 }
 
 .nav-link:hover {
   color: var(--text);
+  border-color: var(--border);
   background: var(--bg-card);
 }
 
 .nav-link.active {
-  color: var(--text);
-  background: var(--bg-card);
+  color: var(--accent);
+  border-color: var(--nav-active-border);
+  background: var(--nav-active-bg);
 }
 
 .sidebar-footer {
@@ -256,15 +308,25 @@ html.light .icon-moon { display: block; }
 /* ── Main Content ── */
 .content {
   margin-left: var(--sidebar-width);
-  max-width: 44rem;
-  padding: 3rem 3rem 4rem;
+  max-width: 50rem;
+  padding: 2.35rem 2.5rem 4rem;
   position: relative;
   z-index: 1;
 }
 
+/* ── Surface Panel ── */
+.surface-panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 1rem;
+  box-shadow: var(--panel-shadow), var(--panel-inset);
+  padding: 2.25rem;
+  margin-bottom: 1.75rem;
+}
+
 /* ── Sections ── */
 .section {
-  margin-bottom: 5rem;
+  margin-bottom: 1.75rem;
 }
 
 .section:last-of-type {
@@ -287,10 +349,10 @@ html.light .icon-moon { display: block; }
 }
 
 h1 {
-  font-size: 2.25rem;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
+  font-size: clamp(1.35rem, 1.85vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
   color: var(--text);
   margin-bottom: 1.25rem;
 }
@@ -512,8 +574,13 @@ h3 {
 
   .content {
     margin-left: 0;
-    padding: 5rem 1.25rem 3rem;
+    padding: 5rem 0.75rem 3rem;
     max-width: 100%;
+  }
+
+  .surface-panel {
+    padding: 1.5rem 1.25rem;
+    border-radius: 0.75rem;
   }
 
   h1 {
