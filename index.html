@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhirendra Singh</title>
+  <meta name="description" content="Dhirendra Singh — Software Engineer, Builder" />
+  <meta property="og:title" content="Dhirendra Singh" />
+  <meta property="og:description" content="Software Engineer, Builder" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    (function() {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <nav>
+      <div class="sidebar-header">
+        <span class="sidebar-name">DS</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#building" class="nav-link">Building</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Past Projects</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </nav>
+  </aside>
+
+  <header class="mobile-header" id="mobileHeader">
+    <span class="mobile-name">Dhirendra Singh</span>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <main class="content">
+    <!-- Hero -->
+    <section id="home" class="section hero">
+      <div class="fade-in">
+        <p class="kicker">Software Engineer / Builder</p>
+        <h1>Dhirendra Singh</h1>
+        <p class="hero-text">
+          I build software — at work, on the side, and sometimes from scratch. Most recently a Senior Software Engineer at
+          <a href="https://www.zillow.com" target="_blank" rel="noopener">Zillow</a>, where I worked on search, AI features,
+          and backend systems. Before that, I built search infrastructure at
+          <a href="https://www.microsoft.com" target="_blank" rel="noopener">Microsoft</a>.
+        </p>
+        <p class="hero-text">
+          Outside of work, I keep building things. Some shipped, some didn't survive — all of them taught me something.
+          I'm currently co-founding <a href="#snap-accounting">Snap Accounting</a>, an AI-native audit firm.
+        </p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/dsingh12/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://github.com/gdagitrep" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://twitter.com/dsingh12_" target="_blank" rel="noopener" aria-label="Twitter">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="mailto:dhirendra.12.singh@gmail.com" aria-label="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- What I'm Building -->
+    <section id="building" class="section">
+      <div class="fade-in">
+        <p class="kicker">Current</p>
+        <h2>What I'm Building</h2>
+
+        <div class="card" id="snap-accounting">
+          <div class="card-header">
+            <h3>Snap Accounting</h3>
+            <span class="badge">Co-Founder / CTO</span>
+          </div>
+          <p>
+            An AI-native financial statement audit firm. Instead of selling software to audit firms, we do the audits ourselves
+            using a platform that runs the engagement end-to-end — risk identification, procedure selection, document ingestion,
+            vouching, and working paper generation. A licensed CPA reviews and signs the opinion.
+          </p>
+          <p>
+            Starting with Not-For-Profit audits in British Columbia, where there's more demand than firms to serve it.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Python</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">React</span>
+            <span class="tag">OpenAI Agents SDK</span>
+            <span class="tag">Azure Doc Intelligence</span>
+            <span class="tag">Supabase</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>VidScribe</h3>
+            <a href="https://vidscribe.netlify.app" target="_blank" rel="noopener" class="card-link">vidscribe.netlify.app &rarr;</a>
+          </div>
+          <p>
+            A browser-based call recorder and transcription tool. Captures screen, system audio, and mic locally,
+            then transcribes and summarizes using OpenAI. Everything stays in your browser — audio is only sent
+            to OpenAI when you ask. Supports speaker diarization, waveform-based audio splitting, and export.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Browser APIs</span>
+            <span class="tag">FFmpeg WASM</span>
+            <span class="tag">OpenAI</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Cwilio</h3>
+            <a href="https://cwilio.vercel.app" target="_blank" rel="noopener" class="card-link">cwilio.vercel.app &rarr;</a>
+          </div>
+          <p>
+            A web-based phone calling app built on Twilio. Acts as a host app for a shared phone layer
+            with Supabase auth.
+          </p>
+          <div class="card-tags">
+            <span class="tag">Twilio</span>
+            <span class="tag">Supabase</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <div class="fade-in">
+        <p class="kicker">Work</p>
+        <h2>Experience</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-date">2019 &ndash; 2026</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Zillow <span class="role">Senior Software Engineer</span></h3>
+              <p>
+                Rebuilt the backends for saved search, home search, home lookup, and autocomplete — systems used by
+                millions of home shoppers daily. Built Zillow's ChatGPT plugin and AI-powered home search.
+                Built an AI-based leasing tool to help agents respond faster to leads and book more tours.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-date">2015 &ndash; 2018</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Microsoft <span class="role">Software Development Engineer</span></h3>
+              <p>
+                Worked on the Bing team building Substrate Search, a next-generation email and document search system.
+                It launched in 2017 and was integrated into Outlook, OWA, and Cortana. Also worked on CloudSearch
+                for large-scale dataset search, used by Xbox Store and Bing Maps.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-date">2014</span>
+            </div>
+            <div class="timeline-content">
+              <h3>Microsoft <span class="role">Software Engineer Intern</span></h3>
+              <p>
+                Worked on storage and consistency of performance metrics for Bing Search plugins on Azure cloud.
+                Reduced log space by 40% through real-time data bucket compaction.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-date">2013 &ndash; 2015</span>
+            </div>
+            <div class="timeline-content">
+              <h3>McGill University <span class="role">Research & Teaching Assistant</span></h3>
+              <p>
+                Thesis research on path-finding algorithms in stealth games using medial skeleton.
+                TA for Modern Computer Games, Intro to CS, Java, and C++ courses.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Past Projects -->
+    <section id="projects" class="section">
+      <div class="fade-in">
+        <p class="kicker">Side Projects</p>
+        <h2>Things I've Built</h2>
+        <p class="section-intro">
+          I like building things. Not all of them worked out, but each one was a real attempt at solving something.
+        </p>
+
+        <div class="projects-grid">
+          <div class="card">
+            <div class="card-header">
+              <h3>DafriAI</h3>
+              <a href="https://dafriapp.netlify.app/" target="_blank" rel="noopener" class="card-link">dafriapp.netlify.app &rarr;</a>
+            </div>
+            <p>
+              Started as a desktop automation tool for controlling apps programmatically. Launched it for landlords
+              to automate chats on Zillow, Facebook Marketplace, and other platforms — responding to leads,
+              pre-qualifying renters, and scheduling viewings 24/7. Shipped as a Mac app and later as
+              per-user remote container deployments.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Penlight.ai</h3>
+            </div>
+            <p>
+              A marketplace for publishing and monetizing domain-specific agents and knowledge bases.
+              Saw that enterprise sales moved too slowly for the timing — closed it.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Fixle</h3>
+              <a href="https://github.com/gdagitrep/fixle_flutter" target="_blank" rel="noopener" class="card-link">GitHub &rarr;</a>
+            </div>
+            <p>
+              A feedback tool for Flutter teams to collect internal product feedback — like code review, but for the UI.
+              Talked to many devs; the switching cost was too high for the problem size.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Katr</h3>
+            </div>
+            <p>
+              A marketplace for home-cooked meals in Vancouver. Connected ~95 people. Shut it down after
+              retention showed the market wasn't strong enough.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>CourseLamp</h3>
+            </div>
+            <p>
+              An online platform for creating and taking rich courses with quizzes and structured content.
+              Co-founder dropped out; couldn't sustain it solo.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>pMart</h3>
+            </div>
+            <p>
+              Hyperlocal delivery from local shopkeepers in India. Built the product and a small supply chain network.
+              Closed due to lack of funding and sales experience at the time.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Med Share</h3>
+            </div>
+            <p>
+              Android app for patients to securely share medical reports with doctors via short links with pin-locked access.
+              Used Azure Storage for image processing and compression.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+      <div class="fade-in">
+        <p class="kicker">Education</p>
+        <h2>Education & Research</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-date">2013 &ndash; 2015</span>
+            </div>
+            <div class="timeline-content">
+              <h3>McGill University <span class="role">M.Sc. Computer Science</span></h3>
+              <p>
+                Thesis on roadmap generation in stealth games using medial skeleton algorithms.
+                GPA: 3.83 / 4.0
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-meta">
+              <span class="timeline-date">2008 &ndash; 2012</span>
+            </div>
+            <div class="timeline-content">
+              <h3>IIT Patna <span class="role">B.Tech Computer Science & Engineering</span></h3>
+              <p>
+                Thesis on active machine learning for named entity recognition. CGPA: 8.25 / 10.
+                IIT-JEE All India Rank 2688 out of ~450,000 candidates.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 2rem;">
+          <div class="card-header">
+            <h3>Publication</h3>
+          </div>
+          <p>
+            <strong>Best Paper Award</strong> &mdash;
+            <a href="https://dl.acm.org/doi/abs/10.1145/2345396.2345427" target="_blank" rel="noopener">"Active Machine Learning Technique for Named Entity Recognition"</a>,
+            ICACCI 2012 (ACM).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Dhirendra Singh &middot; San Francisco</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
